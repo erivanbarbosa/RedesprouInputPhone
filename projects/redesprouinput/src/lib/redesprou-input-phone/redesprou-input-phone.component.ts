@@ -2,6 +2,7 @@ import {Component, OnInit, HostListener, ElementRef, Output, EventEmitter, forwa
 import { FormGroup, FormBuilder, Validators, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CountryCodeData } from '../CountryCodeData';
 import { TelephoneUtils } from '../TelephoneUtils';
+import { PhoneInputSettings } from '../PhoneInputSettings';
 const noop = () => { };
 
 @Component({
@@ -14,6 +15,8 @@ export class RedesprouInputPhoneComponent implements OnInit, ControlValueAccesso
   public openList = false;
   form: FormGroup;
   telephoneUtils: TelephoneUtils;
+  @Input('settings') public settings: PhoneInputSettings;
+
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;
 
@@ -37,11 +40,11 @@ export class RedesprouInputPhoneComponent implements OnInit, ControlValueAccesso
   }
 
   setDisabledState(isDisabled: boolean): void {
-    
+    this.settings.disabled = isDisabled;
   }
 
   constructor(private fb: FormBuilder, private eRef: ElementRef ) {
-      //this.settings = new PhoneInputSettings();
+      this.settings = new PhoneInputSettings();
       this.telephoneUtils = new TelephoneUtils();
   }
 
@@ -57,10 +60,10 @@ export class RedesprouInputPhoneComponent implements OnInit, ControlValueAccesso
 
   initializeForm() {
     this.form = this.fb.group({
-      countryCode: ['+55', Validators.required],
+      countryCode: [this.settings.defaultCountryCode, Validators.required],
       telephone: [null, Validators.required],
       fullTelephone: [null],
-      flag: ['br', Validators.required],
+      flag: [this.settings.defaultCountryFlag, Validators.required],
     });
   }
 
