@@ -115,6 +115,76 @@
           }
         }
       }
+    },
+    "tvmaze": {
+      "projectType": "library",
+      "root": "projects/tvmaze",
+      "sourceRoot": "projects/tvmaze/src",
+      "prefix": "tm",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tvmaze/tsconfig.lib.json",
+            "project": "projects/tvmaze/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tvmaze/src/test.ts",
+            "tsConfig": "projects/tvmaze/tsconfig.spec.json",
+            "karmaConfig": "projects/tvmaze/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tvmaze/tsconfig.lib.json",
+              "projects/tvmaze/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "redesprouinput": {
+      "projectType": "library",
+      "root": "projects/redesprouinput",
+      "sourceRoot": "projects/redesprouinput/src",
+      "prefix": "tm",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/redesprouinput/tsconfig.lib.json",
+            "project": "projects/redesprouinput/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/redesprouinput/src/test.ts",
+            "tsConfig": "projects/redesprouinput/tsconfig.spec.json",
+            "karmaConfig": "projects/redesprouinput/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/redesprouinput/tsconfig.lib.json",
+              "projects/redesprouinput/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "redesprou-input-phone"
 }

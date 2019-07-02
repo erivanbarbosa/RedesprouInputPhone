@@ -18,6 +18,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "tvmaze": [
+        "dist/tvmaze"
+      ],
+      "tvmaze/*": [
+        "dist/tvmaze/*"
+      ],
+      "redesprouinput": [
+        "dist/redesprouinput"
+      ],
+      "redesprouinput/*": [
+        "dist/redesprouinput/*"
+      ]
+    }
   }
 }
