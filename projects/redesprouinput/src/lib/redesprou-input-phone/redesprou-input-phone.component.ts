@@ -1,12 +1,13 @@
-import { Component, OnInit, Input, ElementRef, HostListener, ViewEncapsulation } from '@angular/core';
-import {ControlValueAccessor, FormGroup, FormBuilder, Validators} from '@angular/forms'
+import {Component, OnInit, HostListener, ElementRef, Output, EventEmitter, forwardRef, Input } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { CountryCodeData } from '../CountryCodeData';
 const noop = () => { };
 
 @Component({
   selector: 'tm-redesprou-input-phone',
   templateUrl: './redesprou-input-phone.component.html',
   styleUrls: ['./redesprou-input-phone.component.css', './redesprou-input.scss'],
-   encapsulation: ViewEncapsulation.None
+  providers: [{provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => RedesprouInputPhoneComponent), multi: true }]
 })
 export class RedesprouInputPhoneComponent implements OnInit, ControlValueAccessor {
   public openList = false;
@@ -17,7 +18,7 @@ export class RedesprouInputPhoneComponent implements OnInit, ControlValueAccesso
 
   writeValue(value: any) {
     if(value) {
-      const countryData = {name: 'Brasil', iso2: 'br', code: '+55'}; 
+      const countryData: CountryCodeData = {name: 'Brasil', iso2: 'br', code: '+55'}; 
       this.form.get('fullTelephone').setValue(value);
       this.form.get('countryCode').setValue(countryData.code);
       this.form.get('telephone').setValue(value);
