@@ -3,7 +3,7 @@
 
 
 <form [formGroup]="form">
-    <div class="phone-input">
+    <div class="phone-input" [attr.disabled]="settings.disabled ? true : null">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <div class="input-group-text">
@@ -23,11 +23,11 @@
         <div class="country-list" *ngIf="openList">
             <div class="country-list-item" (click)="changeCountryCode('+55', 'br')">
                 <span class="flag-icon flag-icon-br flag-icon-squared"></span>
-                <span>Brasil</span>
+                <span>{{settings.translations['Brazil']}}</span>
             </div>
             <div class="country-list-item" (click)="changeCountryCode('+1', 'us')">
                 <span class="flag-icon flag-icon-us flag-icon-squared"></span>
-                <span>Estados Unidos</span>
+                <span>{{settings.translations['United States']}}</span>
             </div>
         </div>
 
