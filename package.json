@@ -46,6 +46,7 @@
     "tsickle": "^0.35.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3",
-    "bootstrap": "^4.3.1"
+    "bootstrap": "^4.3.1",
+    "angular-font-awesome": "^3.1.2"
   }
 }

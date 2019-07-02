@@ -6,6 +6,7 @@
   },
 
   "whitelistedNonPeerDependencies": [
-    "bootstrap"
+    "bootstrap",
+    "angular-font-awesome"
   ]
 }
