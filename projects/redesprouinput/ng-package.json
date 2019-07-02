@@ -7,6 +7,7 @@
 
   "whitelistedNonPeerDependencies": [
     "bootstrap",
-    "angular-font-awesome"
+    "angular-font-awesome",
+    "flag-icon-css"
   ]
 }

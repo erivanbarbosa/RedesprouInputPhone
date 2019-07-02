@@ -5,10 +5,12 @@
     "@angular/common": "^8.0.3",
     "@angular/core": "^8.0.3",
     "angular-font-awesome": "^3.1.2",
-    "bootstrap": "^4.3.1"
+    "bootstrap": "^4.3.1",
+    "flag-icon-css": "^3.3.0"
   },
   "dependencies": {
     "angular-font-awesome": "^3.1.2",
-    "bootstrap": "^4.3.1"
+    "bootstrap": "^4.3.1",
+    "flag-icon-css": "^3.3.0"
   }
 }
