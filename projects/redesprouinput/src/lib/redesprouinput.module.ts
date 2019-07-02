@@ -6,7 +6,7 @@ import {NgxMaskModule} from 'ngx-mask'
 
 @NgModule({
   declarations: [ RedesprouInputPhoneComponent],
-  imports: [ CommonModule, ReactiveFormsModule, NgxMaskModule.forRoot()
+  imports: [ CommonModule, ReactiveFormsModule, NgxMaskModule
   ],
   exports: [RedesprouInputPhoneComponent]
 })

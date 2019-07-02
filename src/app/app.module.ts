@@ -2,9 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-//import { RedesprouinputModule } from 'redesprouinput';
+import { RedesprouinputModule } from 'redesprouinput';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RedesprouinputModule } from 'projects/redesprouinput/src/lib/redesprouinput.module';
+import {NgxMaskModule} from 'ngx-mask'
+
+//import { RedesprouinputModule } from 'projects/redesprouinput/src/lib/redesprouinput.module';
 
 
 @NgModule({
@@ -12,7 +14,7 @@ import { RedesprouinputModule } from 'projects/redesprouinput/src/lib/redesproui
     AppComponent
   ],
   imports: [
-    BrowserModule, RedesprouinputModule, ReactiveFormsModule
+    BrowserModule, RedesprouinputModule, ReactiveFormsModule, NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
