@@ -1,6 +1,7 @@
 import {Component, OnInit, HostListener, ElementRef, Output, EventEmitter, forwardRef, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CountryCodeData } from '../CountryCodeData';
+import { TelephoneUtils } from '../TelephoneUtils';
 const noop = () => { };
 
 @Component({
@@ -12,13 +13,13 @@ const noop = () => { };
 export class RedesprouInputPhoneComponent implements OnInit, ControlValueAccessor {
   public openList = false;
   form: FormGroup;
-
+  telephoneUtils: TelephoneUtils;
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;
 
   writeValue(value: any) {
     if(value) {
-      const countryData: CountryCodeData = {name: 'Brasil', iso2: 'br', code: '+55'}; 
+      const countryData: CountryCodeData = this.telephoneUtils.getCountryCodeData(value);
       this.form.get('fullTelephone').setValue(value);
       this.form.get('countryCode').setValue(countryData.code);
       this.form.get('telephone').setValue(value);
@@ -41,7 +42,7 @@ export class RedesprouInputPhoneComponent implements OnInit, ControlValueAccesso
 
   constructor(private fb: FormBuilder, private eRef: ElementRef ) {
       //this.settings = new PhoneInputSettings();
-      //this.telephoneUtils = new TelephoneUtils();
+      this.telephoneUtils = new TelephoneUtils();
   }
 
   ngOnInit() {
