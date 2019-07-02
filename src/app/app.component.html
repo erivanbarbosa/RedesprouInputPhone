@@ -1,11 +1,10 @@
 
-<form>
+<form [formGroup]="form">
   <div class="container" style="margin:0">
       <div class="form-group col-xs-6" style="margin-top: 30px;">
-        <tm-redesprou-input-phone></tm-redesprou-input-phone>
+        <tm-redesprou-input-phone formControlName="telephone"></tm-redesprou-input-phone>
+  
+          <span>{{form.value.telephone}}</span>
       </div>
   </div>
-
-  <span class="flag-icon flag-icon-squared flag-icon-br"></span>
-
-</form>
+  </form>

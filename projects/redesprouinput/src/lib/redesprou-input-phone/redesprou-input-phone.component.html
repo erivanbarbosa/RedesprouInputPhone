@@ -14,7 +14,7 @@
 
             <input id="prefix-code" type="text" class="form-control" formControlName="countryCode">
             <input id="telephone-number" type="text" 
-               class="form-control" 
+                [mask]="getPhoneMask()"  class="form-control" 
                 formControlName="telephone"
                 (click)="openList = false" 
                 (change)="telephoneChanged()">
