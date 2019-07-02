@@ -50,7 +50,7 @@ ul {
 }
 
 .input-group-text {
-    background-color: unset;
+    background-color: white !important;
 }
 
 .phone-input {
